@@ -30,8 +30,8 @@ class ETL:
                 values_writer = csv.writer(values_f)
                 missing_v_writer = csv.writer(missing_v_f)
 
-                values_writer.writerow(['Numer porządkowy', 'suma', 'średnia'])
-                missing_v_writer.writerow(['Numer porządkowy', 'Indeksy brakujących wartości'])
+                values_writer.writerow(['Order Number', 'Sum', 'Avg'])
+                missing_v_writer.writerow(['Order Number', 'Missing values idices'])
                 for line in self.read_lines():
                     i, total, average, missing_values = self.process_line(line)
                     values_writer.writerow([i, total, average])
